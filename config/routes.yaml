@@ -4,6 +4,73 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+# Configuração da rota para realizar o logout
 logout:
     path: /logout
     methods: GET
+
+# Configuração da rota para realizar o login
+login:
+    path: /login
+    methods: [GET, POST]
+
+# Configuração da rota para registrar um usuário
+register:
+    path: /register
+    methods: [GET, POST]
+
+# Configuração da rota para obter todas as empresas
+companies:
+    path: /companies
+    controller: App\Controller\CompanyController::getCompanies
+    # requirements:
+    #     _role: ROLE_USER
+
+# Configuração da rota para criar uma nova empresa
+company_create:
+    path: /company/create
+    controller: App\Controller\CompanyController::createCompany
+    # requirements:
+    #     _role: ROLE_USER
+
+# Configuração da rota para atualizar uma empresa
+company_update:
+    path: /company/{company_id}/update
+    controller: App\Controller\CompanyController::updateCompany
+    requirements:
+        company_id: '\d+'
+    # requirements:
+    #     _role: ROLE_USER
+
+# Configuração da rota para excluir uma empresa
+company_delete:
+    path: /company/{company_id}/delete
+    controller: App\Controller\CompanyController::deleteCompany
+    requirements:
+        company_id: '\d+'
+    # requirements:
+    #     _role: ROLE_USER
+
+# Configuração da rota para listar sócios de uma empresa
+partners:
+    path: /company/{company_id}/partners
+    controller: App\Controller\PartnerController::getPartners
+    methods: GET
+
+# Configuração da rota para criar um novo sócio
+partner_create:
+    path: /company/{company_id}/partner/create
+    controller: App\Controller\PartnerController::createPartner
+    methods: [GET, POST]
+
+# Configuração da rota para atualizar um sócio existente
+partner_update:
+    path: /partner/{partner_id}/update
+    controller: App\Controller\PartnerController::updatePartner
+    methods: [GET, POST]
+
+# Configuração da rota para excluir um sócio
+partner_delete:
+    path: /partner/{partner_id}/delete
+    controller: App\Controller\PartnerController::deletePartner
+    methods: POST
