@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+    <a href='{{ path('partner_create', {company_id: companyId}) }}' class='btn btn-primary mb-4 mt-4'>+ Adicionar Sócio</a>
+    <div class="table-responsive-lg">
+        <table class="table ">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Email</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for partner in partners %}
+                    <tr scope="row">
+                        <td>{{ partner.id }}</td>
+                        <td>{{ partner.name }}</td>
+                        <td>{{ partner.cpf }}</td>
+                        <td>{{ partner.email }}</td>
+                        <td><a href='/company/{{ companyId }}/partner/{{ partner.id }}/update' class='btn btn-primary'>Editar</a></td>
+                        <td><a href='/company/{{ companyId }}/partner/{{ partner.id }}/delete' class='btn btn-danger'>Excluir</a></td>
+                    </tr>
+                {% endfor %}        
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
