@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <a href='{{ path('companies') }}' class='btn btn-primary mb-4 mt-4'> <- Voltar</a>
+    <h1>{{ title }}</h1>
+    {{ form(form) }}
+    <a href='{{ path('partners', {company_id: companyId})}}' class='btn btn-primary'>Quadro Societário</a>
+{% endblock %}
