@@ -74,3 +74,63 @@ partner_delete:
     path: /partner/{partner_id}/delete
     controller: App\Controller\PartnerController::deletePartner
     methods: POST
+
+# Rota para listar todas as empresas
+api_companies:
+    path: /api/companies
+    controller: App\Controller\ApiController::getCompanies
+    methods: GET
+
+# Rota para listar apenas uma empresa
+api_company:
+    path: /api/company/{company_id}
+    controller: App\Controller\ApiController::getCompany
+    methods: GET
+
+# Rota para listar todos os sócios de uma empresa
+api_company_partners:
+    path: /api/company/{company_id}/partners
+    controller: App\Controller\ApiController::getPartners
+    methods: GET
+
+# Rota para listar apenas um sócio de uma empresa
+api_company_partner:
+    path: /api/company/{company_id}/partner/{partnerId}
+    controller: App\Controller\ApiController::getPartner
+    methods: GET
+
+# Rota para criar uma nova empresa
+api_company_create:
+    path: /api/company/create
+    controller: App\Controller\ApiController::createCompany
+    methods: POST
+
+# Rota para atualizar uma empresa
+api_company_update:
+    path: /api/company/{company_id}/update
+    controller: App\Controller\ApiController::updateCompany
+    methods: PUT
+
+# Rota para deletar uma empresa
+api_company_delete:
+    path: /api/company/{company_id}/delete
+    controller: App\Controller\ApiController::deleteCompany
+    methods: DELETE
+
+# Rota para criar um novo sócio para uma empresa
+api_company_partner_create:
+    path: /api/company/{company_id}/partner/create
+    controller: App\Controller\ApiController::createPartner
+    methods: POST
+
+# Rota para atualizar um sócio de uma empresa
+api_company_partner_update:
+    path: /api/company/{company_id}/partner/{partner_id}/update
+    controller: App\Controller\ApiController::updatePartner
+    methods: PUT
+
+# Rota para deletar um sócio de uma empresa
+api_company_partner_delete:
+    path: /api/company/partner/{partner_id}/delete
+    controller: App\Controller\ApiController::deletePartner
+    methods: DELETE
