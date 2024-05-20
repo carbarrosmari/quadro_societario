@@ -31,8 +31,3 @@ php bin/console doctrine:migrations:migrate
 # Execute o servidor do projeto
 php -S 0.0.0.0:8123 -t public
 ```
-### Documentation
-
-
-
-
