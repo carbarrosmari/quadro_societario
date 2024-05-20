@@ -213,7 +213,7 @@ A rota retorna um JSON contendo os detalhes dos sócios.
 
 ### Listar um Sócio Específico de uma Empresa
 
-**Rota**: `/api/company/{company_id}/partner/{partner_id}`
+**Rota**: `/api/company/partner/{partner_id}`
 
 **Método HTTP**: `GET`
 
@@ -221,7 +221,7 @@ A rota retorna um JSON contendo os detalhes dos sócios.
 
 **Exemplo de Requisição**:
 ```http
-GET /api/company/1/partner/1
+GET /api/company/partner/1
 ```
 **Resposta**
 

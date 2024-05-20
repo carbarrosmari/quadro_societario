@@ -31,3 +31,37 @@ php bin/console doctrine:migrations:migrate
 # Execute o servidor do projeto
 php -S 0.0.0.0:8123 -t public
 ```
+
+## Instruções de teste
+
+**Listar empresas**
+
+`GET: /companies`
+
+**Criar empresa**
+
+`POST: /company/create`
+
+**Atualizar empresa**
+
+`PUT: /company/{company_id}/update`
+
+**Excluir empresa**
+
+`DELETE: /company/{company_id}/delete`
+
+**Listar sócios**
+
+`GET: /company/{company_id}/partners`
+
+**Criar sócio**
+
+`POST: /company/{company_id}/partner/create`
+
+**Atualizar sócio**
+
+`PUT: /partner/{partner_id}/update`
+
+**Excluir sócio**
+
+`DELETE: /company/{company_id}/partner/{partner_id}/delete`

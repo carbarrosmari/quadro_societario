@@ -23,7 +23,7 @@ class PartnerController extends AbstractController
         return $this->render('partner/partners.html.twig', $data);
     }
 
-    #[Route('company/{company_id}/partner/create', name: 'partner_create')]
+    #[Route('/company/{company_id}/partner/create', name: 'partner_create')]
     public function createPartner(Request $request, PartnerRepository $partnerRepository): Response
     {
         $msg = '';

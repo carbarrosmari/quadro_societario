@@ -41,12 +41,11 @@ class ApiController extends AbstractController
     }
 
     // listar apenas um sócio de uma empresa
-    #[Route('/api/company/{id}/partner/{partnerId}', name: 'api_company_partner', methods: ['GET'])]
-    public function getPartner(Request $request, CompanyRepository $companyRepository): Response
+    #[Route('/api/company/partner/{partner_id}', name: 'api_company_partner', methods: ['GET'])]
+    public function getPartner(Request $request, PartnerRepository $partnerRepository): Response
     {
-        $company = $companyRepository->find($request->get('company_id'));
-        $partner = $company->getPartners()->find();
-        return $this->json($partner);
+        $partner = $partnerRepository->find($request->get('partner_id'));
+        return $this->json($partner, 200, [], ['groups' => 'api_list']);
     }
 
     // criar nova empresa
