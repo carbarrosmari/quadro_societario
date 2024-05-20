@@ -20,9 +20,12 @@ Pequeno sistema para gerir dados de empresas e seu quadro de sócios.
 
 ```bash
 # Clone esse repositório
-git clone
+git clone git@github.com:carbarrosmari/quadro_societario.git
 
-# Execute os container
+# Acesse a branch dev
+git checkout dev
+
+# Execute os containers
 docker-compose up -d
 
 # Execute as migrations
